@@ -1,0 +1,307 @@
+
+:root {
+  --button-default-color:  rgba(19, 19, 19, 0.9);
+  --button-fill-color: rgba(48, 116, 185, 0.9);
+  --profile-image-color:#343a40!important; 
+  --card-color: white;
+  --title-color : black;
+  --social-color : rgba(218, 13, 13, 0.6);
+  --submit-button : rgba(19, 19, 19, 0.4);
+  --connections-color : #131313;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+/* Background Styling */
+body {
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(143,136,136,1) 0%, rgba(0,0,0,1) 50%);
+}
+
+/* Page Content */
+.page-content {
+  position: relative;
+}
+
+.col-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  margin: auto;
+}
+
+.col-content-width{
+  width: 50%;
+}
+
+.modal {
+  display:block;
+}
+
+/* PDF Preview */ 
+.pdf-preview{
+  height: 500px;
+  width: 100%;
+}
+
+.download-button a {
+  font: 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+}
+
+/* Card CSS */ 
+.card-container {
+  position: relative;
+  -webkit-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+  border-radius: 4px;
+  height: 400px;
+  min-width: 500px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.card div  {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.container {
+  width: auto;
+}
+
+.row {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.card .back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: var(--card-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.card.flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: transparent;
+}
+
+/*Profile Picture CSS*/
+.profile-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: contain; 
+  border:3px solid var(--profile-image-color);
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.9;
+  filter: alpha(opacity=90); /* For IE8 and earlier */
+  position: relative;
+  top: 10px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+/* Card Contents */
+.card-custom-content{
+  font: 25px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #47525d;
+  position: relative;
+  top: 20px;
+}
+
+.profile-desc{
+  /*display: block !important;*/
+  position: relative !important;
+  object-fit: contain;
+  font: 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.fake-spacer{
+  font-size: 0; 
+  height: 10px;
+  line-height: 0;
+}
+
+/* Link Button */
+.link-button {
+  border-radius: 100%;
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid black;
+  transition:  border-radius 0.15s linear, border-color 0.15s ease-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.5;
+  display: inline-grid;
+}
+
+.link-button  i, .link-button a {
+  line-height: 35px;
+  transition: color 0.15s ease-out;
+  text-align: center;
+  font-size: 20px !important;
+  color: var(--button-default-color) !important;
+}
+
+.link-button:hover{
+  border-radius: 0%;
+  border-color: var(--button-fill-color);
+  opacity: 0.7;
+}
+
+.link-button:hover i, .link-button:hover a{
+  color: var(--button-fill-color) !important;
+}
+
+
+/* Social Links */
+.connections-title {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold; 
+  text-rendering: optimizeLegibility;
+  position: relative;
+  top: 7%; 
+  color: var(--connections-color);
+  letter-spacing: 0.15em;
+}
+
+.fc {
+  font-size: 22px !important;
+  position: relative !important;
+  top: -3px !important ;
+}
+
+
+/* Bootstrap Footer CSS */
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Contact form */
+.email-form {
+  height: 90% !important;
+}
+
+
+form {
+  max-width: 500px;
+  text-align: center;
+  margin: 20px auto;
+  width: 100% !important;
+  height: 100% !important;
+}
+form input, form textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: 'Merriweather', sans-serif;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+  resize: none;
+  height: 30%;
+}
+form input:focus, form textarea:focus {
+  -moz-box-shadow: 0 0px 2px #e74c3c !important;
+  -webkit-box-shadow: 0 0px 2px #e74c3c !important;
+  box-shadow: 0 0px 2px #e74c3c !important;
+}
+form #input-submit {
+  color: white;
+  background: var(--submit-button);
+  cursor: pointer;
+  opacity: 70%;
+}
+
+form #input-submit:hover {
+  -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+  -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+  box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+form textarea {
+  height: 50px;
+}
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Latex CSS */
+.latex sub {
+  vertical-align: -0.1ex;
+  margin-left: -0.1667em;
+  margin-right: -0.025em;
+}
+
+.xetex sub {
+  vertical-align: -0.1ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+}
+
+.latex sub, .latex sup, .xetex sub {
+  font-size: 0.9em;
+  text-transform:uppercase;
+
+}
+.latex sup {
+  font-size: 0.85em;
+  vertical-align: -0.2em;
+  margin-left: -0.26em;
+  margin-right: -0.05em;
+}
