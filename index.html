@@ -37,10 +37,10 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item resume-link">
-            <a class="nav-link resume-link" href="#">Resume</a>
+            <a class="nav-link modal-link" value="resume-modal" href="#">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/hmtinc?tab=repositories">Projects</a>
+            <a class="nav-link modal-link" value="project-modal" href="#">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/hmtinc/Latex-Notes"><span
@@ -50,36 +50,102 @@
       </div>
     </nav>
 
-    <div class="modal fade"  id="resume-modal" tabindex="-1" role="dialog" aria-labelledby="resume" aria-hidden="true">
+    <div class="modal fade" id="resume-modal" tabindex="-1" role="dialog" aria-labelledby="resume" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="resume-content">Resume</h5>
-            <button type="button" id="modal-close-resume" tippy-pos="top" value="Close Resume Preview" class="close display-tippy" data-dismiss="modal" aria-label="Close">
-                <i class="far fa-times-circle"></i>
+            <button type="button" id="modal-close-resume" tippy-pos="top" value="Close Resume Preview"
+              class="close display-tippy" data-dismiss="modal" aria-label="Close">
+              <i class="far fa-times-circle"></i>
             </button>
           </div>
           <div class="modal-body">
-            <iframe class="pdf-preview" src="https://drive.google.com/file/d/1lAmU0US9HT5SVNUTgCwSvW27XXVVkMaq/preview"></iframe>
+            <iframe class="pdf-preview"
+              src="https://drive.google.com/file/d/1lAmU0US9HT5SVNUTgCwSvW27XXVVkMaq/preview"></iframe>
           </div>
           <div class="modal-footer">
-              <div class="download-button" >
-                  <a id="download-tex-button" tippy-pos="top" href="https://drive.google.com/open?id=1sTWnQLpm_Yvj1zKjini3aBH-W5nG5Omr"  value="Download TeX Source" class="btn btn-warning display-tippy"><i class="fas fa-file-download"> Get Source</i></a>
-              </div>
-            <div class="download-button" >
-                <a id="download-link-button" tippy-pos="top" href="https://drive.google.com/file/d/1lAmU0US9HT5SVNUTgCwSvW27XXVVkMaq/view?usp=sharing"  value="Download PDF" class="btn btn-primary display-tippy"><i class="fas fa-file-download"> Download</i></a>
+            <div class="download-button">
+              <a id="download-tex-button" tippy-pos="top"
+                href="https://drive.google.com/open?id=1sTWnQLpm_Yvj1zKjini3aBH-W5nG5Omr" value="Download TeX Source"
+                class="btn btn-warning display-tippy"><i class="fas fa-file-download"> Get Source</i></a>
+            </div>
+            <div class="download-button">
+              <a id="download-link-button" tippy-pos="top"
+                href="https://drive.google.com/file/d/1lAmU0US9HT5SVNUTgCwSvW27XXVVkMaq/view?usp=sharing"
+                value="Download PDF" class="btn btn-primary display-tippy"><i class="fas fa-file-download">
+                  Download</i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
+    <div class="modal fade" id="project-modal" tabindex="-1" role="dialog" aria-labelledby="Projects"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg project-dialog" role="document">
+        <div class="modal-content project-modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="project-content">Projects</h5>
+            <button type="button" id="modal-close-project" tippy-pos="top" value="Close Project Preview"
+              class="close display-tippy" data-dismiss="modal" aria-label="Close">
+              <i class="far fa-times-circle"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card project-card text-white bg-dark">
+              <img class="card-img-top project-img" src="images/project-cards/z80.png" alt="Z80-Swift">
+              <div class="card-body">
+                <h5 class="card-title">Z80 Swift</h5>
+                <p class="card-text">Z80 Swift is a cycle accurate Zilog Z80 emulator that I am currently writing in
+                  Swift. The ultimate end goal is to have working cross platform emulator core that can be used to
+                  emulate Z80 based systems.</p>
+                <a href="https://github.com/hmtinc/Z80-Swift" class="btn btn-primary">View Source Code</a>
+              </div>
+            </div>
+            <div class="fake-spacer"></div>
+            <div class="card project-card text-white bg-dark">
+              <img class="card-img-top project-img" src="images/project-cards/latex.png" alt="LaTeX Notes">
+              <div class="card-body">
+                <h5 class="card-title">LaTeX Notes</h5>
+                <p class="card-text">A collection of <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span> notes taken
+                  in University of Waterloo CS courses which are made accessible via a PHP web utility</p>
+                <a href="https://github.com/hmtinc/Latex-Notes" class="btn btn-primary">View Notes Collection</a>
+              </div>
+            </div>
+            <div class="fake-spacer"></div>
+            <div class="card project-card text-white bg-dark">
+              <img class="card-img-top project-img" src="images/project-cards/flare.png" alt="Project-Flare">
+              <div class="card-body">
+                <h5 class="card-title">Project Flare (Unity C#)</h5>
+                <p class="card-text">Flare is a work in progress 3rd person survival shooter designed in unity with c#
+                  scripts. Flare was designed with the intention to create a 3rd person survival shooter without using
+                  any third party assets, as a result a lot of key scripts rely very little on additional assets. If you
+                  wish to use these scripts in your, please consider including proper credit in your code</p>
+                <a href="https://github.com/hmtinc/Project-Flare" class="btn btn-primary">View Source Code</a>
+              </div>
+            </div>
+            <div class="fake-spacer"></div>
+            <div class="card project-card text-white bg-dark">
+              <img class="card-img-top project-img" src="images/project-cards/phx.png" alt="Phoenix Rise of the Fallen">
+              <div class="card-body">
+                <h5 class="card-title">Phoenix Rise of the Fallen</h5>
+                <p class="card-text">Phoenix is a A 2D RPG game designed with VB.net, which was designed with the
+                  intention to create a 2D RPG game engine in VB.net. Overtime, Phoenix was then built to showcase the
+                  abilities of the engine and what it could achieve.</p>
+                <a href="https://github.com/hmtinc/Project-Flare" class="btn btn-primary">View Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="container text-center col-content col-content-width">
       <div class="row justify-content-center">
         <div class="col-md-7 no-float">
           <div class="card-container">
-            <div class="card">
+            <div class="card flipable-card">
               <div class="front">
                 <div class="fake-spacer"></div>
                 <div class="fake-spacer"></div>
@@ -92,10 +158,10 @@
                   <div class="fake-spacer"></div>
                   <div class="link-button display-tippy" id="linked-in" value="Connect on LinkedIn"><a
                       href="https://www.linkedin.com/in/harshnmistry/"><i class="fab fa-linkedin"></i></a></div>
-                  <div class="link-button flip-action display-tippy" id="email" value="Email Form"><a><i
+                  <div class="link-button flip-action display-tippy" id="email-action" value="Email Form"><a><i
                         class="fas fa-envelope-square"></i></a></div>
-                  <div class="link-button display-tippy" id="github" value="Github Projects"><a href="https://github.com/hmtinc"><i
-                        class="fab fa-github-square"></i></a></div>
+                  <div class="link-button display-tippy" id="github" value="Github Projects"><a
+                      href="https://github.com/hmtinc"><i class="fab fa-github-square"></i></a></div>
                   <div class="fake-spacer"></div>
                 </div>
               </div>
@@ -126,7 +192,8 @@
     <div class="container text-center">
       <small>Copyright &copy; Harsh Mistry</small>
       <br>
-      <small>Click for Open Source Acknowlegments and Site Source</small>
+      <small><a href="https://github.com/hmtinc/Personal-Website">Click for Third-Party Acknowlegments and Site
+          Source</a></small>
     </div>
   </footer>
 

@@ -41,20 +41,24 @@ function setupCardFlip(){
   //Apply actions
   for(var i = 0; i < actionButtons.length; i++){
     actionButtons[i].addEventListener("click", function(){
-      document.getElementsByClassName("card")[0].classList.toggle("flipped");
+      document.getElementsByClassName("flipable-card")[0].classList.toggle("flipped");
     })
   }
 }
 
 function setupModalClick(){
-  //Fetch Resume buttons
-  var resumeActions = document.getElementsByClassName("resume-link");
+  //Fetch modal buttons
+  var modalActions = document.getElementsByClassName("modal-link");
 
-  //Apply actions
-  for(var i = 0; i < resumeActions.length; i++){
-    resumeActions[i].addEventListener("click", function(){
-      $('#resume-modal').modal('show');
-    })
+  for(var i = 0; i < modalActions.length; i++){
+    //Fetch Id
+    var modalId = "#" + modalActions[i].getAttribute("value");
+
+    //Setup click action
+    modalActions[i].modalId = modalId;
+    modalActions[i].addEventListener("click", function(evt){
+      $(evt.target.modalId).modal('show');
+    }, false);
   }
 
 }
