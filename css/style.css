@@ -165,6 +165,8 @@ body {
   position: relative !important;
   object-fit: contain;
   font: 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  width: 80%;
+  left: 10%;
 }
 
 .fake-spacer{
