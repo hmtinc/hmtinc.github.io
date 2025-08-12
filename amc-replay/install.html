@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMC Replay - Installation</title>
+    <link rel="icon" href="https://www.amctheatres.com/favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+        .glass {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            background-color: rgba(220, 53, 69, 0.8);
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        .section { padding: 2rem; }
+        .section h2 { color: #ff6b6b; margin-bottom: 1rem; font-size: 1.8rem; }
+        .section p { margin-bottom: 1rem; line-height: 1.6; }
+        .section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .section li { margin-bottom: 0.5rem; }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .download-btn:hover { transform: translateY(-2px); }
+        .install-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            font-size: 1.2rem;
+            padding: 20px 40px;
+        }
+        .screenshots { margin-top: 2rem; }
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .screenshot:hover { transform: scale(1.05); }
+        .dashboard-preview {
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 2%;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .full-width { grid-column: 1 / -1; text-align: center; }
+        .warning {
+            background-color: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .content { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header glass">
+            <h1>🎬 AMC Replay</h1>
+            <p>Transform your AMC movie history into beautiful analytics</p>
+        </div>
+
+        <div class="content">
+            <div class="section glass">
+                <h2>What is AMC Replay?</h2>
+                <p>AMC Replay is a powerful browser extension that analyzes your AMC movie history and creates stunning visual dashboards showing:</p>
+                <ul>
+                    <li>📊 Total movies watched and money saved</li>
+                    <li>📅 Monthly breakdowns with detailed analytics</li>
+                    <li>🎯 A-List subscription value analysis</li>
+                    <li>📈 Beautiful charts and statistics</li>
+                    <li>📄 CSV export for your data</li>
+                    <li>📸 PNG export for sharing</li>
+                </ul>
+                <p>Perfect for movie enthusiasts who want to track their cinema journey!</p>
+            </div>
+
+            <div class="section glass">
+                <h2>How It Works</h2>
+                <p><strong>Important:</strong> AMC Replay only works on the AMC order history page:</p>
+                <p><code>https://www.amctheatres.com/my-amc/history</code></p>
+                
+                <div class="warning">
+                    ⚠️ The script will only appear when you're logged into your AMC account and viewing your purchase history.
+                </div>
+
+                <p>Once installed, you'll see a "🎬 AMC Replay" button in the AMC website header. Click it to:</p>
+                <ol>
+                    <li>Automatically scan all your movie history</li>
+                    <li>Process and analyze your data</li>
+                    <li>Generate a beautiful dashboard</li>
+                    <li>Export your data as needed</li>
+                </ol>
+            </div>
+
+            <div class="section glass">
+                <h2>Requirements</h2>
+                <p>To use AMC Replay, you need:</p>
+                <ul>
+                    <li><strong>Google Chrome Browser</strong></li>
+                    <li><strong>Tampermonkey Extension</strong></li>
+                    <li><strong>AMC A-List Account</strong> (with purchase history)</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem; color: #ff6b6b;">Step 1: Install Chrome</h3>
+                <a href="https://www.google.com/chrome/" class="download-btn" target="_blank">
+                    🌐 Download Google Chrome
+                </a>
+
+                <h3 style="margin-top: 2rem; color: #ff6b6b;">Step 2: Install Tampermonkey</h3>
+                <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" class="download-btn" target="_blank">
+                    🔧 Install Tampermonkey Extension
+                </a>
+            </div>
+
+            <div class="section glass">
+                <h2>Installation Steps</h2>
+                <ol>
+                    <li><strong>Install Chrome & Tampermonkey</strong> (links above)</li>
+                    <li><strong>Click the install button below</strong></li>
+                    <li><strong>Tampermonkey will open</strong> - click "Install"</li>
+                    <li><strong>Go to AMC history page</strong> and log in</li>
+                    <li><strong>Look for the "🎬 AMC Replay" button</strong> in the header</li>
+                    <li><strong>Click and enjoy!</strong></li>
+                </ol>
+
+                <div class="warning">
+                    💡 <strong>Tip:</strong> Make sure you're logged into your AMC account and have some movie history before using the script.
+                </div>
+            </div>
+        </div>
+
+        <div class="section glass full-width">
+            <h2>Install AMC Replay</h2>
+            <p>Ready to transform your movie data? Click below to install:</p>
+            <a href="amc-replay-v3.js" class="download-btn install-btn">
+                🚀 Install AMC Replay Script
+            </a>
+        </div>
+
+        <div class="section glass full-width screenshots">
+            <h2>Screenshots</h2>
+            <p>See AMC Replay in action:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <h3 style="color: #ff6b6b; margin-bottom: 1rem;">Loading Screen</h3>
+                    <img src="sample-loading.png" alt="AMC Replay Loading Screen" class="screenshot" style="max-width: 400px;">
+                </div>
+                <div>
+                    <h3 style="color: #ff6b6b; margin-bottom: 1rem;">Analytics Dashboard</h3>
+                    <img src="sample-dashboard.png" alt="AMC Replay Dashboard" class="screenshot dashboard-preview" onclick="openModal(this)">
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Click to view full size</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section glass full-width">
+            <h2>Support & Features</h2>
+            <p>AMC Replay supports movie data from 2022-2025 and includes:</p>
+            <ul style="display: inline-block; text-align: left;">
+                <li>✅ Automatic duplicate detection (cancelled bookings)</li>
+                <li>✅ A-List savings calculations</li>
+                <li>✅ Beautiful glassmorphism UI design</li>
+                <li>✅ Export to CSV and PNG formats</li>
+                <li>✅ Multi-year data support</li>
+                <li>✅ Real-time processing with progress indicators</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
